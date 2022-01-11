@@ -1,10 +1,15 @@
-(function(){
+(function() {
    'use strict';
 
-   angular.module('myFirstApp', [])
+   angular.module('myFirstApp', []) // connecting to html view
 
-   .controller('MyFirstController', function(){
-
+   .controller('MyFirstController', function($scope) { // $scope - special variable for AngularJS
+      $scope.name = "SomeName";
+      $scope.sayHello = function() {
+         return "Hello AngularJS";
+      }
    });
+
+
 
 })();
