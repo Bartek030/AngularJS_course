@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>My first AnularJS App</title>
+
+        <style>
+            body {
+                font-size: 1.3em;
+            }
+        </style>
+
+        <script src="../angular.min.js"></script>
+        <script src="app.js"></script>
+    </head>
+
+    <!-- ng-app - connecting to JS file -->
+    <body ng-app="nameCalculator">
+
+        <h1>Name Calculator</h1>
+        <!-- ng-controller - connecting with AngularJS controller -->
+        <div ng-controller="NameCalculatorController">
+            <div>
+                Your name:
+                <!-- ng-model - the input value will be from $scope variable value is changed when user change the input -->
+                <input type="text" ng-model="name" ng-keyup="displayNumeric();">
+            </div>
+            <div>Total Numeric value of prson's name is: {{totalValue}}</div>
+        </div>
+
+    </body>
+</html>
