@@ -1,15 +1,15 @@
 (function () {
     'use strict';
 
-    angular.module('MsgApp', []) 
-        .controller('MsgController', MsgController)
+    angular.module('CounterApp', []) 
+        .controller('CounterController', CounterController)
         .filter('loves', lovesFilter)
         .filter('truth', truthFilter);
 
     // Adding custom filter #1-2
-    MsgController.$inject = ['$scope', 'lovesFilter'];
+    CounterController.$inject = ['$scope', 'lovesFilter'];
     // Adding custom filter #2-2
-    function MsgController ($scope, lovesFilter) {
+    function CounterController ($scope, lovesFilter) {
         $scope.mood = "sad";
 
         $scope.sayMessage = function() {

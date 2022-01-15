@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MsgApp">
+<html lang="en" ng-app="CounterApp">
     
     <head>
 
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Custom Filters</title>
+        <title>The Digest Cycle</title>
 
         <style>
             body {
@@ -21,17 +21,11 @@
     
     <body>
 
-        <h1>Custom Filters</h1>
-        <div ng-controller="MsgController">
-            Original: {{ sayMessage() }} <br>
-            Loves: {{ sayLovesMessage() }} <br>
-            Truth: {{ sayLovesMessage() | truth : 'healthy' : 'cookie' }} <br>
-            BIG TRUTH: {{ sayLovesMessage() | truth : 'healthy' : 'cookie' | uppercase}}
+        <h1>The Digest Cycle</h1>
+        <div ng-controller="CounterController">
+            <button ng-click="showNumberOfWatchers()">Log # of Watchers</button>
             <div>
-                <button ng-click="makeHappy()">Make Happy</button>
-                <br>
-
-                <img ng-src="img/{{mood}}.jpg" width="300px">
+                
             </div>
         </div>
         
