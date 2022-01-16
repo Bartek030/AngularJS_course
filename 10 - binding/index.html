@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="BindingApp">
+    
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Binding</title>
+
+        <style>
+            body {
+                font-size: 1.2em;
+                background-color: grey;
+            }
+        </style>
+
+        <script src="../angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    
+    <body>
+
+        <h1>Binding</h1>
+        <div ng-controller="BindingController"> 
+            <button ng-click="showNumberOfWatchers()">Log # of Watchers</button>
+            <button ng-click="setFullName()">Set Full Name</button><br>
+
+            <!-- 1-time binding - it is not updating after change, it can be set only one time for UI - watchers is removed -->
+            Full name is: {{ ::fullName }} <br>
+            <button ng-click="logFirstName()">Log First Name</button>
+            <button ng-click="logFullName()">Log Full Name</button>
+            <div>
+                <!-- 2-way binding -->
+                <input type="text" ng-model="firstName">
+            </div>
+        </div>
+        
+    </body>
+</html>
