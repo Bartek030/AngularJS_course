@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ShoppingListApp">
+    
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Loops</title>
+
+        <style>
+            body {
+                font-size: 1.2em;
+                background-color: grey;
+            }
+        </style>
+
+        <script src="../angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    
+    <body>
+
+        <h1>Loops</h1>
+        <div ng-controller="ShoppingListController"> 
+            <h3>Shopping List:</h3>
+            <!-- Looping through array -->
+            <ul>
+                <li ng-repeat="item in shoppingList1">{{ item }}</li>
+            </ul>
+            <!-- Looping through array of objects -->
+            <ul>
+                <li ng-repeat="item in shoppingList2">Buy {{ ::item.quantity }} of {{ item.name }}(s)</li>
+            </ul>
+            <!-- Looping with index property -->
+            <ul>
+                <li ng-repeat="item in shoppingList2">{{ $index + 1 }}. Buy {{ item.quantity }} of {{ item.name }}(s)</li>
+            </ul>
+            <!-- Binding works as in the binding folder - :: remove the watcher -->
+            <input type="text" ng-model="shoppingList2[0].quantity"><br>
+            <input type="text" ng-model="newItemName" placeholder="item name"><br>
+            <input type="text" ng-model="newItemQuantity" placeholder="item quantity"><br>
+            <button ng-click="addToList()">Add to List</button>
+        </div>
+        
+    </body>
+</html>
