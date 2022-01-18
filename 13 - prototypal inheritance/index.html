@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="ControllerAsApp">
+    
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Controller As Syntax</title>
+
+        <style>
+            body {
+                font-size: 1.2em;
+                background-color: #444;
+            }
+        </style>
+
+        <script src="../angular.min.js"></script>
+        <script src="app.js"></script>
+
+    </head>
+    
+    <body>
+
+        <h1>Controller As Syntax</h1>
+        <div ng-controller="ParentController1"> 
+            <div ng-controller="ChildController1">
+
+            </div>
+        </div>
+
+        <div ng-controller="ParentController2 as parent"> 
+            <div ng-controller="ChildController1">
+                Parent value: {{ parent.value }}
+                <div ng-controller="ChildController2 as child">
+                    Child value: {{ child.value }}
+                    Parent value: {{ parent.value }}
+                </div>
+            </div>
+        </div>
+
+    </body>
+</html>
