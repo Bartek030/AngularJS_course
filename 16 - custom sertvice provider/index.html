@@ -34,7 +34,11 @@
                     <button ng-click="list.removeItem($index);">Remove Item</button>
                 </li>
             </ol>
-            <div class="error">Error: {{ list.errorMessage }}</div>
+            <!-- ng-if - add or delete div depends on attibute value -->
+            <div ng-if="list.errorMessage">Error: {{ list.errorMessage }}</div>
+            <!-- ng-if - show or hide div depends on attibute value -->
+            <div ng-show="list.errorMessage">Error: {{ list.errorMessage }}</div>
+            <div ng-hide="list.errorMessage">Error: {{ list.errorMessage }}</div>
         </div> 
 
     </body>
