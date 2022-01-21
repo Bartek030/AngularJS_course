@@ -11,6 +11,8 @@
 
     function ListItem() {
         var ddo = {
+            // AE - attribute or element (default), A - attribute, E - element
+            restrict: 'AE',
             templateUrl: 'listItem.html'
         };
 
