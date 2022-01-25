@@ -14,9 +14,10 @@
             }
         });
 
-    ShoppingListComponentController.$inject = ['$scope', '$element']
-    function ShoppingListComponentController($scope, $element) {
+    ShoppingListComponentController.$inject = [/*'$scope', */'$element']
+    function ShoppingListComponentController(/*$scope, */$element) {
         var $ctrl = this;
+        var totalItems;
 
         $ctrl.cookiesInList = function() {
             for (var i = 0; i < $ctrl.items.length; i++) {
@@ -34,15 +35,32 @@
         };
 
         $ctrl.$onInit = function() {
-            console.log("We are in $onInit();");
+            //console.log("We are in $onInit();");
+            totalItems = 0;
         };
 
         $ctrl.$onChanges = function(changeObj) {
             console.log("Changes: ", changeObj);
         };
 
+        $ctrl.$doCheck = function() {
+            if($ctrl.items.length !== totalItems) {
+                console.log("# of items change. Checking for cookies");
+                totalItems = $ctrl.items.length;
+                if($ctrl.cookiesInList()) {
+                    console.log("Cookies detected");
+                    var warningElement = $element.find('div.error');
+                    warningElement.slideDown(900);
+                } else {
+                    console.log("No cookies here!");
+                    var warningElement = $element.find('div.error');
+                    warningElement.slideUp(900);
+                }
+            }
+        };
+
         // same as link in directives
-        $ctrl.$postLink = function() {
+/*        $ctrl.$postLink = function() {
             $scope.$watch('$ctrl.cookiesInList()', function(newValue, OldValue) {
                 console.log($element);
                 if(newValue === true) {
@@ -54,6 +72,7 @@
                 }
             });
         };
+*/    
     }
 
     ShoppingListController.$inject = ['ShoppingListFactory'];
