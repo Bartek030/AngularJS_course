@@ -1,0 +1,16 @@
+body {
+    font-size: 1.2em;
+    background-color: #888;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+    display: none;
+}
+
+.loading-icon {
+    position: absolute;
+    left: calc(100% / 2);
+    top: 10px;
+}
