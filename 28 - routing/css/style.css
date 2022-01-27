@@ -1,0 +1,17 @@
+body {
+    font-size: 1.2em;
+    background-color: #888;
+}
+
+div.tabs > a, div.tabs > button {
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+  
+div.tabs {
+    margin-bottom: 10px;
+}
+  
+.activeTab {
+    font-weight: bold;
+}

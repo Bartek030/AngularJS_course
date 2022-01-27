@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="RoutingApp">
+    
+    <head>
+
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Intro to ui-router</title>
+
+        <link rel="stylesheet" href="css/style.css">
+
+    </head>
+    
+    <body>
+
+        <h1>Intro to ui-router</h1>
+
+        <div class="tabs">
+            <!-- ui-sref - reference to state name 
+                 ui-sref-active - apply css style class when state is active -->
+            <a ui-sref="tab1" ui-sref-active="activeTab">Tab 1</a>
+            <a ui-sref="tab2" ui-sref-active="activeTab">Tab 2</a>
+            <!-- <button ui-sref="tab2">Tab 2</button> -->
+        </div>
+
+        <ui-view></ui-view>
+
+        <!-- Libraries -->
+        <script src="../angular.min.js"></script>
+        <script src="../angular-ui-router.min.js"></script>
+
+        <!-- Modules -->
+        <script src="src/app.js"></script>
+
+    </body>
+</html>
